@@ -1,0 +1,30 @@
+.login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginTitle {
+    background-color: rgb(232, 232, 232);
+}
+
+.loginTitle h3 {
+    font-weight: normal;
+    margin: auto 0;
+}
+
+.loginContainer {
+    width: 480px;
+    height: 327px;
+}
+
+.userInput {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.userBody {
+    padding: 15px;
+}
