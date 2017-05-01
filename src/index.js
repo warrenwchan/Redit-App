@@ -7,15 +7,18 @@ import MainLayout from './layouts/MainLayout';
 // import CreatPost from './containers/CreatePost';
 import Welcome from './containers/Welcome';
 import LoginContainer from './containers/Login';
-import PostList from './containers/PostList';
+import PostListContainer from './containers/PostList';
 // import NotFound from './containers/NotFound';
+
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  // Link,
-  // Redirect
+  Link,
+  Redirect
 } from 'react-router-dom';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -29,17 +32,19 @@ injectTapEventPlugin();
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
-    <Router>
-      <MainLayout>
-        <App>
-          <Switch>
-            <Route exact path="/" component={Welcome}/>
-            <Route exact path="/posts" component={PostList}/>
-            <Route exact path="/login" component={LoginContainer}/>
-          </Switch>
-        </App>
-      </MainLayout>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <MainLayout>
+          <App>
+            <Switch>
+              <Route exact path="/" component={Welcome}/>
+              <Route exact path="/posts" component={PostListContainer}/>
+              <Route exact path="/login" component={LoginContainer}/>
+            </Switch>
+          </App>
+        </MainLayout>
+      </Router>
+    </Provider>
   </MuiThemeProvider>,
   document.getElementById('root')
 );

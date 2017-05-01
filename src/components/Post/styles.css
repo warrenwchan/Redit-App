@@ -11,3 +11,11 @@ h3 {
     display: flex;
     justify-content: space-between;
 }
+
+.lessonTagContain {
+    display: flex;
+}
+
+.lessonTag {
+    margin: 5px !important;
+}

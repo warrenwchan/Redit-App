@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+
 
 import { Card } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
@@ -15,7 +17,13 @@ const Post = ({ post, i, upVote, vote }) => (
       <p>{post.description}</p>
       <div className={styles.postFooter}>
         <FlatButton onTouchTap={() => upVote(post.id)}> ▴ Vote {vote} </FlatButton>
-        <Chip>{post.categories.map(postCategories => postCategories)} </Chip>
+        <div className={styles.lessonTagContain}>
+          {post.lessons.map((postLessons, i) => {
+            return <Chip
+              className={styles.lessonTag}
+              key={i}> {postLessons.title} </Chip>
+          })}
+        </div>
       </div>
     </Card>
   </div>
@@ -26,4 +34,4 @@ Post.propTypes = {
   upVote: PropTypes.func.isRequired
 };
 
-export default Post;
+export default connect()(Post);
