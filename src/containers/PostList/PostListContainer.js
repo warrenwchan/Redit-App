@@ -5,7 +5,6 @@ import { getPosts, upVote, sortNewest, sortPopular } from '../../redux/actions'
 import PostToolBar from '../../components/PostToolBar/';
 
 import Chip from 'material-ui/Chip';
-import { data } from './../../mock-data';
 
 class PostListContainer extends Component {
   constructor(){

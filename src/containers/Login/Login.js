@@ -29,8 +29,8 @@ const UserInput = () => (
 
 const UserSubmit = () => (
     <div>
-        <RaisedButton 
-            label="Login" 
+        <RaisedButton
+            label="Login"
             backgroundColor="rgb(183, 28, 28)"
         />
         <FlatButton label="Sign up" />

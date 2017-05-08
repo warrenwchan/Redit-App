@@ -14,6 +14,7 @@ export const getWeeks = () => {
         .then((json) => {
             dispatch({
                 type: GET_WEEKS,
+                mode: 'cors',
                 payload: {
                     weeks: json
                 }
@@ -24,7 +25,7 @@ export const getWeeks = () => {
 
 export const getPosts = (lessonId) => {
     return (dispatch) => {
-        fetch(`http://localhost:3005/api/lessons/${lessonId}/posts`)
+        fetch(`http://localhost:3005/posts`)
             .then((response) => {
                 if(!response.ok) return Promise.reject('Could not get weeks');
             return response.json();
@@ -32,6 +33,7 @@ export const getPosts = (lessonId) => {
         .then((json) => {
             dispatch({
                 type: GET_POSTS,
+                mode: 'cors',
                 payload: {
                     posts: json
                 }
